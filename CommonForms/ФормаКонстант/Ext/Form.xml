@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.1">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="КлючAPI" id="1">
+			<DataPath>НаборКонстант.КлючAPI</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="КлючAPIКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КлючAPIРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="СпособВыполненияЗаданий" id="12">
+			<DataPath>НаборКонстант.СпособВыполненияЗаданий</DataPath>
+			<ContextMenu name="СпособВыполненияЗаданийКонтекстноеМеню" id="13"/>
+			<ExtendedTooltip name="СпособВыполненияЗаданийРасширеннаяПодсказка" id="14"/>
+		</InputField>
+		<UsualGroup name="ГруппаWebhook" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Webhook</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа webhook</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаWebhookРасширеннаяПодсказка" id="16"/>
+			<ChildItems>
+				<InputField name="URLWebhook" id="7">
+					<DataPath>НаборКонстант.URLWebhook</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="URLWebhookКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="URLWebhookРасширеннаяПодсказка" id="9"/>
+				</InputField>
+				<InputField name="КлючWebhook" id="4">
+					<DataPath>НаборКонстант.КлючWebhook</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КлючWebhookКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="КлючWebhookРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<Button name="ЗадатьURL" id="10">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ЗадатьURL</CommandName>
+					<ExtendedTooltip name="ЗадатьURLРасширеннаяПодсказка" id="11"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="НаборКонстант" id="1">
+			<Type>
+				<v8:Type>cfg:ConstantsSet</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>НаборКонстант.СпособВыполненияЗаданий.Ref</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗадатьURL" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задать URL</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задать URL</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗадатьURL</Action>
+		</Command>
+	</Commands>
+</Form>
