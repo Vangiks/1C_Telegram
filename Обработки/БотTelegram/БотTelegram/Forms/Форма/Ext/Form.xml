@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.1">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаПоказатьСообщения" id="72">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПоказатьСообщения</CommandName>
+				<ExtendedTooltip name="ФормаПоказатьСообщенияРасширеннаяПодсказка" id="73"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Бот" id="1">
+			<DataPath>Объект.Бот</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="БотКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="БотРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Токен" id="4">
+			<DataPath>Объект.Токен</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ТокенКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ТокенРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="Сервер" id="7">
+			<DataPath>Объект.Сервер</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="СерверКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="СерверРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<Pages name="Страницы" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="11"/>
+			<ChildItems>
+				<Page name="ГруппаКомандыБота" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Команды бота</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаКомандыБотаРасширеннаяПодсказка" id="13"/>
+					<ChildItems>
+						<Table name="КомандыБота" id="14">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.КомандыБота</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="КомандыБотаКонтекстноеМеню" id="15"/>
+							<AutoCommandBar name="КомандыБотаКоманднаяПанель" id="16"/>
+							<ExtendedTooltip name="КомандыБотаРасширеннаяПодсказка" id="17"/>
+							<SearchStringAddition name="КомандыБотаСтрокаПоиска" id="18">
+								<AdditionSource>
+									<Item>КомандыБота</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="КомандыБотаСтрокаПоискаКонтекстноеМеню" id="19"/>
+								<ExtendedTooltip name="КомандыБотаСтрокаПоискаРасширеннаяПодсказка" id="20"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="КомандыБотаСостояниеПросмотра" id="21">
+								<AdditionSource>
+									<Item>КомандыБота</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="КомандыБотаСостояниеПросмотраКонтекстноеМеню" id="22"/>
+								<ExtendedTooltip name="КомандыБотаСостояниеПросмотраРасширеннаяПодсказка" id="23"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="КомандыБотаУправлениеПоиском" id="24">
+								<AdditionSource>
+									<Item>КомандыБота</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="КомандыБотаУправлениеПоискомКонтекстноеМеню" id="25"/>
+								<ExtendedTooltip name="КомандыБотаУправлениеПоискомРасширеннаяПодсказка" id="26"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="КомандыБотаНомерСтроки" id="27">
+									<DataPath>Объект.КомандыБота.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КомандыБотаНомерСтрокиКонтекстноеМеню" id="28"/>
+									<ExtendedTooltip name="КомандыБотаНомерСтрокиРасширеннаяПодсказка" id="29"/>
+								</LabelField>
+								<InputField name="КомандыБотаИмя" id="30">
+									<DataPath>Объект.КомандыБота.Имя</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КомандыБотаИмяКонтекстноеМеню" id="31"/>
+									<ExtendedTooltip name="КомандыБотаИмяРасширеннаяПодсказка" id="32"/>
+								</InputField>
+								<InputField name="КомандыБотаДействие" id="33">
+									<DataPath>Объект.КомандыБота.Действие</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КомандыБотаДействиеКонтекстноеМеню" id="34"/>
+									<ExtendedTooltip name="КомандыБотаДействиеРасширеннаяПодсказка" id="35"/>
+								</InputField>
+								<InputField name="КомандыБотаПараметр" id="36">
+									<DataPath>Объект.КомандыБота.Параметр</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КомандыБотаПараметрКонтекстноеМеню" id="37"/>
+									<ExtendedTooltip name="КомандыБотаПараметрРасширеннаяПодсказка" id="38"/>
+								</InputField>
+								<InputField name="КомандыБотаОписание" id="39">
+									<DataPath>Объект.КомандыБота.Описание</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КомандыБотаОписаниеКонтекстноеМеню" id="40"/>
+									<ExtendedTooltip name="КомандыБотаОписаниеРасширеннаяПодсказка" id="41"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаКомандыПользователей" id="42">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Команды пользователей</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаКомандыПользователейРасширеннаяПодсказка" id="43"/>
+					<ChildItems>
+						<Table name="КомандыПользователей" id="44">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.КомандыПользователей</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="КомандыПользователейКонтекстноеМеню" id="45"/>
+							<AutoCommandBar name="КомандыПользователейКоманднаяПанель" id="46"/>
+							<ExtendedTooltip name="КомандыПользователейРасширеннаяПодсказка" id="47"/>
+							<SearchStringAddition name="КомандыПользователейСтрокаПоиска" id="48">
+								<AdditionSource>
+									<Item>КомандыПользователей</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="КомандыПользователейСтрокаПоискаКонтекстноеМеню" id="49"/>
+								<ExtendedTooltip name="КомандыПользователейСтрокаПоискаРасширеннаяПодсказка" id="50"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="КомандыПользователейСостояниеПросмотра" id="51">
+								<AdditionSource>
+									<Item>КомандыПользователей</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="КомандыПользователейСостояниеПросмотраКонтекстноеМеню" id="52"/>
+								<ExtendedTooltip name="КомандыПользователейСостояниеПросмотраРасширеннаяПодсказка" id="53"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="КомандыПользователейУправлениеПоиском" id="54">
+								<AdditionSource>
+									<Item>КомандыПользователей</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="КомандыПользователейУправлениеПоискомКонтекстноеМеню" id="55"/>
+								<ExtendedTooltip name="КомандыПользователейУправлениеПоискомРасширеннаяПодсказка" id="56"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="КомандыПользователейНомерСтроки" id="57">
+									<DataPath>Объект.КомандыПользователей.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КомандыПользователейНомерСтрокиКонтекстноеМеню" id="58"/>
+									<ExtendedTooltip name="КомандыПользователейНомерСтрокиРасширеннаяПодсказка" id="59"/>
+								</LabelField>
+								<InputField name="КомандыПользователейЧатID" id="60">
+									<DataPath>Объект.КомандыПользователей.ЧатID</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КомандыПользователейЧатIDКонтекстноеМеню" id="61"/>
+									<ExtendedTooltip name="КомандыПользователейЧатIDРасширеннаяПодсказка" id="62"/>
+								</InputField>
+								<InputField name="КомандыПользователейДата" id="63">
+									<DataPath>Объект.КомандыПользователей.Дата</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КомандыПользователейДатаКонтекстноеМеню" id="64"/>
+									<ExtendedTooltip name="КомандыПользователейДатаРасширеннаяПодсказка" id="65"/>
+								</InputField>
+								<InputField name="КомандыПользователейВыполнено" id="66">
+									<DataPath>Объект.КомандыПользователей.Выполнено</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КомандыПользователейВыполненоКонтекстноеМеню" id="67"/>
+									<ExtendedTooltip name="КомандыПользователейВыполненоРасширеннаяПодсказка" id="68"/>
+								</InputField>
+								<InputField name="КомандыПользователейКоманда" id="69">
+									<DataPath>Объект.КомандыПользователей.Команда</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КомандыПользователейКомандаКонтекстноеМеню" id="70"/>
+									<ExtendedTooltip name="КомандыПользователейКомандаРасширеннаяПодсказка" id="71"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<Table name="Дерево" id="74">
+			<Representation>Tree</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Дерево</DataPath>
+			<ContextMenu name="ДеревоКонтекстноеМеню" id="75"/>
+			<AutoCommandBar name="ДеревоКоманднаяПанель" id="76"/>
+			<ExtendedTooltip name="ДеревоРасширеннаяПодсказка" id="77"/>
+			<SearchStringAddition name="ДеревоСтрокаПоиска" id="78">
+				<AdditionSource>
+					<Item>Дерево</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоСтрокаПоискаКонтекстноеМеню" id="79"/>
+				<ExtendedTooltip name="ДеревоСтрокаПоискаРасширеннаяПодсказка" id="80"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ДеревоСостояниеПросмотра" id="81">
+				<AdditionSource>
+					<Item>Дерево</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоСостояниеПросмотраКонтекстноеМеню" id="82"/>
+				<ExtendedTooltip name="ДеревоСостояниеПросмотраРасширеннаяПодсказка" id="83"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ДеревоУправлениеПоиском" id="84">
+				<AdditionSource>
+					<Item>Дерево</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоУправлениеПоискомКонтекстноеМеню" id="85"/>
+				<ExtendedTooltip name="ДеревоУправлениеПоискомРасширеннаяПодсказка" id="86"/>
+			</SearchControlAddition>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.БотTelegram</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="Дерево" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПоказатьСообщения" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать сообщения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать сообщения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоказатьСообщения</Action>
+		</Command>
+	</Commands>
+</Form>
